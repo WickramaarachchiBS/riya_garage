@@ -11,8 +11,10 @@ import 'View/Screens/SearchTownScreen.dart';
 import 'View/Screens/SecondScreen.dart';
 import 'View/Screens/Suzuki.dart';
 import 'View/Screens/Toyota.dart';
+//
 import 'View/Screens/DynamicScreen.dart';
 import 'View/Screens/all_sms_screen.dart';
+import 'View/Screens/chat_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,15 +33,17 @@ class MyApp extends StatelessWidget {
             dialogBackgroundColor: AppColors.color2,
           ),
           routes: {
-            '/home': (context) => MyHomePage(), // Home route
-            '/bajaj': (context) => Bajaj(),
-            '/suzuki': (context) => Suzuki(),
-            '/toyota': (context) => Toyota(),
-            '/honda': (context) => Honda(),
-            '/districts': (context) => DistrictsScreen(),
-            '/searchTown': (context) => SearchTownScreen(), // Named route for SecondScreen
-            '/sms': (context) => SmsScreen(), // Named route for SmsScreen
-            '/dynamic': (context) => DynamicScreen(), //Dynamic screen
+            '/home': (context) => const MyHomePage(), // Home route
+            '/bajaj': (context) => const Bajaj(),
+            '/suzuki': (context) => const Suzuki(),
+            '/toyota': (context) => const Toyota(),
+            '/honda': (context) => const Honda(),
+            '/districts': (context) => const DistrictsScreen(),
+            '/searchTown': (context) => const SearchTownScreen(), // Named route for SecondScreen
+            //
+            '/sms': (context) => const SmsScreen(), // Named route for SmsScreen
+            '/dynamic': (context) => const DynamicScreen(), //Dynamic screen
+            'chat': (context) => const ChatScreen(),
           },
           initialRoute: '/dynamic',
         ));

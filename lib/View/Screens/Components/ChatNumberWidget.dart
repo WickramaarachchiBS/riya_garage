@@ -6,7 +6,7 @@ class ChatNumberWidget extends StatelessWidget {
   final String chatNumber;
 
   void chatScreen(BuildContext context, String chatNumber) {
-    Navigator.pushNamed(context, '/chatScreen', arguments: chatNumber);
+    Navigator.pushNamed(context, 'chat', arguments: chatNumber);
   }
 
   @override
@@ -16,6 +16,7 @@ class ChatNumberWidget extends StatelessWidget {
         Expanded(
           child: GestureDetector(
             onTap: () {
+              chatScreen(context, chatNumber);
               print(chatNumber);
             },
             child: Container(

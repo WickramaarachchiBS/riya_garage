@@ -17,11 +17,11 @@ class _DynamicScreenState extends State<DynamicScreen> {
   Widget _getSelectedScreen() {
     switch (currentScreen) {
       case 'Home':
-        return MyHomePage();
+        return const MyHomePage();
       case 'SMS':
-        return SmsScreen();
+        return const SmsScreen();
       default:
-        return MyHomePage();
+        return const MyHomePage();
     }
   }
 
@@ -93,58 +93,3 @@ class _DynamicScreenState extends State<DynamicScreen> {
     );
   }
 }
-
-//
-// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-// children: [
-// // Home option
-// Expanded(
-// child: InkWell(
-// onTap: () {
-// setState(() {
-// currentScreen = options[0];
-// });
-// },
-// child: Row(
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-// Radio<String>(
-// value: options[0],
-// groupValue: currentScreen,
-// onChanged: (value) {
-// setState(() {
-// currentScreen = value!;
-// });
-// },
-// ),
-// Text('Home'),
-// ],
-// ),
-// ),
-// ),
-// // SMS option
-// Expanded(
-// child: InkWell(
-// onTap: () {
-// setState(() {
-// currentScreen = options[1];
-// });
-// },
-// child: Row(
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-// Radio<String>(
-// value: options[1],
-// groupValue: currentScreen,
-// onChanged: (value) {
-// setState(() {
-// currentScreen = value!;
-// });
-// },
-// ),
-// Text('SMS'),
-// ],
-// ),
-// ),
-// ),
-// ],
