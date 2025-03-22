@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '/View/Screens/HomeScreen.dart';
-import '/View/Screens/sms_screen.dart';
+import '/View/Screens/all_sms_screen.dart';
 
 class DynamicScreen extends StatefulWidget {
   const DynamicScreen({super.key});
@@ -29,65 +29,122 @@ class _DynamicScreenState extends State<DynamicScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _getSelectedScreen(),
-      bottomNavigationBar: Container(
-        color: Colors.grey[300],
-        padding: EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // Home option
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    currentScreen = options[0];
-                  });
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+      bottomNavigationBar: SizedBox(
+        height: 80.0,
+        child: Container(
+          color: const Color(0xFFCCC2C2),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
                   children: [
-                    Radio<String>(
-                      value: options[0],
-                      groupValue: currentScreen,
-                      onChanged: (value) {
-                        setState(() {
-                          currentScreen = value!;
-                        });
-                      },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Radio<String>(
+                          value: options[0],
+                          groupValue: currentScreen,
+                          onChanged: (value) {
+                            setState(() {
+                              currentScreen = value!;
+                            });
+                          },
+                        ),
+                      ],
                     ),
-                    Text('Home'),
+                    const Text(
+                      'Home',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ),
-            // SMS option
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    currentScreen = options[1];
-                  });
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              Expanded(
+                child: Column(
                   children: [
-                    Radio<String>(
-                      value: options[1],
-                      groupValue: currentScreen,
-                      onChanged: (value) {
-                        setState(() {
-                          currentScreen = value!;
-                        });
-                      },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Radio<String>(
+                          value: options[1],
+                          groupValue: currentScreen,
+                          onChanged: (value) {
+                            setState(() {
+                              currentScreen = value!;
+                            });
+                          },
+                        ),
+                      ],
                     ),
-                    Text('SMS'),
+                    const Text(
+                      'SMS',
+                      style: TextStyle(fontSize: 15.0),
+                    ),
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+//
+// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+// children: [
+// // Home option
+// Expanded(
+// child: InkWell(
+// onTap: () {
+// setState(() {
+// currentScreen = options[0];
+// });
+// },
+// child: Row(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Radio<String>(
+// value: options[0],
+// groupValue: currentScreen,
+// onChanged: (value) {
+// setState(() {
+// currentScreen = value!;
+// });
+// },
+// ),
+// Text('Home'),
+// ],
+// ),
+// ),
+// ),
+// // SMS option
+// Expanded(
+// child: InkWell(
+// onTap: () {
+// setState(() {
+// currentScreen = options[1];
+// });
+// },
+// child: Row(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Radio<String>(
+// value: options[1],
+// groupValue: currentScreen,
+// onChanged: (value) {
+// setState(() {
+// currentScreen = value!;
+// });
+// },
+// ),
+// Text('SMS'),
+// ],
+// ),
+// ),
+// ),
+// ],
