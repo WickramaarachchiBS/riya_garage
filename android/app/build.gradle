@@ -10,17 +10,17 @@ android {
     namespace = "com.example.riya_garage"
 
     // Use fixed compileSdkVersion to address warnings or potential compatibility issues
-    compileSdkVersion 34// Use a specific SDK version instead of flutter.compileSdkVersion
+    compileSdkVersion = flutter.compileSdkVersion// Use a specific SDK version instead of flutter.compileSdkVersion
 
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "29.0.13113456"
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_17
     }
 
     defaultConfig {

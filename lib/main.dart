@@ -11,6 +11,8 @@ import 'View/Screens/SearchTownScreen.dart';
 import 'View/Screens/SecondScreen.dart';
 import 'View/Screens/Suzuki.dart';
 import 'View/Screens/Toyota.dart';
+import 'View/Screens/DynamicScreen.dart';
+import 'View/Screens/sms_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,31 +23,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      ChangeNotifierProvider(
-          create: (context) => DetailsProvider(),
-          child: MaterialApp(
-            title: 'Riya',
-            theme: ThemeData(
-              dialogBackgroundColor: AppColors.color2,
-            ),
-            routes:{
-              '/': (context) => MyHomePage(),          // Home route
-              '/bajaj': (context) => Bajaj(),
-              '/suzuki': (context) => Suzuki(),
-              '/toyota': (context) => Toyota(),
-              '/honda': (context) => Honda(),
-              '/districts' : (context) => DistrictsScreen(),
-              '/searchTown' : (context) => SearchTownScreen()// Named route for SecondScreen
-            },
-              initialRoute: '/',
-          )
-      );
+    return ChangeNotifierProvider(
+        create: (context) => DetailsProvider(),
+        child: MaterialApp(
+          title: 'Riya',
+          theme: ThemeData(
+            dialogBackgroundColor: AppColors.color2,
+          ),
+          routes: {
+            '/home': (context) => MyHomePage(), // Home route
+            '/bajaj': (context) => Bajaj(),
+            '/suzuki': (context) => Suzuki(),
+            '/toyota': (context) => Toyota(),
+            '/honda': (context) => Honda(),
+            '/districts': (context) => DistrictsScreen(),
+            '/searchTown': (context) => SearchTownScreen(), // Named route for SecondScreen
+            '/sms': (context) => SmsScreen(), // Named route for SmsScreen
+            '/dynamic': (context) => DynamicScreen(), //Dynamic screen
+          },
+          initialRoute: '/dynamic',
+        ));
   }
 }
-
-
-
-
-
-
