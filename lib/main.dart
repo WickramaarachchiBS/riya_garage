@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'Model/DetailsProvider.dart';
 import 'View/AppColors.dart';
@@ -16,7 +17,9 @@ import 'View/Screens/DynamicScreen.dart';
 import 'View/Screens/all_sms_screen.dart';
 import 'View/Screens/chat_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

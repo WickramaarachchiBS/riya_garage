@@ -29,64 +29,66 @@ class _DynamicScreenState extends State<DynamicScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _getSelectedScreen(),
-      bottomNavigationBar: SizedBox(
-        height: 80.0,
-        child: Container(
-          color: const Color(0xFFCCC2C2),
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Radio<String>(
-                          value: options[0],
-                          groupValue: currentScreen,
-                          onChanged: (value) {
-                            setState(() {
-                              currentScreen = value!;
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                    const Text(
-                      'Home',
-                      style: TextStyle(
-                        fontSize: 15.0,
+      bottomNavigationBar: SafeArea(
+        child: SizedBox(
+          height: 80.0,
+          child: Container(
+            color: const Color(0xFFCCC2C2),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: options[0],
+                            groupValue: currentScreen,
+                            onChanged: (value) {
+                              setState(() {
+                                currentScreen = value!;
+                              });
+                            },
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Radio<String>(
-                          value: options[1],
-                          groupValue: currentScreen,
-                          onChanged: (value) {
-                            setState(() {
-                              currentScreen = value!;
-                            });
-                          },
+                      const Text(
+                        'Home',
+                        style: TextStyle(
+                          fontSize: 15.0,
                         ),
-                      ],
-                    ),
-                    const Text(
-                      'SMS',
-                      style: TextStyle(fontSize: 15.0),
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Radio<String>(
+                            value: options[1],
+                            groupValue: currentScreen,
+                            onChanged: (value) {
+                              setState(() {
+                                currentScreen = value!;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                      const Text(
+                        'SMS',
+                        style: TextStyle(fontSize: 15.0),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

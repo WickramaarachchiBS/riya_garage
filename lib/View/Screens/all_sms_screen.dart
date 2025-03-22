@@ -22,8 +22,6 @@ class SmsScreen extends StatelessWidget {
           child: Column(
             children: [
               ChatNumberWidget(chatNumber: '05489922'),
-              ChatNumberWidget(chatNumber: '29992929'),
-              ChatNumberWidget(chatNumber: '89962199'),
             ],
           ),
         ));

@@ -26,80 +26,82 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: AppColors.color7,
       ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Provider.of<DetailsProvider>(context, listen: false).setCompany('Bajaj');
-                    Navigator.pushNamed(context, '/bajaj');
-                  },
-                  child: HomePageBoxWidget(
-                    screenWidth: screenWidth,
-                    screenHeight: screenHeight,
-                    text: 'BAJAJ',
-                    boxWidth: 0.40,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Bajaj');
+                      Navigator.pushNamed(context, '/bajaj');
+                    },
+                    child: HomePageBoxWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: 'BAJAJ',
+                      boxWidth: 0.40,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: screenWidth * 0.05,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Provider.of<DetailsProvider>(context, listen: false).setCompany('Suzuki');
-                    Navigator.pushNamed(context, '/suzuki');
-                  },
-                  child: HomePageBoxWidget(
-                    screenWidth: screenWidth,
-                    screenHeight: screenHeight,
-                    text: 'SUZUKI',
-                    boxWidth: 0.40,
+                  SizedBox(
+                    width: screenWidth * 0.05,
                   ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Provider.of<DetailsProvider>(context, listen: false).setCompany('Toyota');
-                    Navigator.pushNamed(context, '/toyota');
-                  },
-                  child: HomePageBoxWidget(
-                    screenWidth: screenWidth,
-                    screenHeight: screenHeight,
-                    text: 'TOYOTA',
-                    boxWidth: 0.40,
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Suzuki');
+                      Navigator.pushNamed(context, '/suzuki');
+                    },
+                    child: HomePageBoxWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: 'SUZUKI',
+                      boxWidth: 0.40,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: screenWidth * 0.05,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Provider.of<DetailsProvider>(context, listen: false).setCompany('Honda');
-                    Navigator.pushNamed(context, '/honda');
-                  },
-                  child: HomePageBoxWidget(
-                    screenWidth: screenWidth,
-                    screenHeight: screenHeight,
-                    text: 'HONDA',
-                    boxWidth: 0.40,
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Toyota');
+                      Navigator.pushNamed(context, '/toyota');
+                    },
+                    child: HomePageBoxWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: 'TOYOTA',
+                      boxWidth: 0.40,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  SizedBox(
+                    width: screenWidth * 0.05,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Honda');
+                      Navigator.pushNamed(context, '/honda');
+                    },
+                    child: HomePageBoxWidget(
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight,
+                      text: 'HONDA',
+                      boxWidth: 0.40,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -14,11 +14,11 @@ class HomePageFirebaseImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: screenWidth <= 600 ? screenWidth * 0.60 : screenWidth * 0.45,
-      height: screenWidth <= 600 ? screenHeight * 0.2 :  screenHeight * 0.23,
+      height: screenWidth <= 600 ? screenHeight * 0.2 : screenHeight * 0.23,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: EdgeInsets.only(top: screenHeight * 0.05),
+      margin: EdgeInsets.only(top: screenHeight * 0.0),
       child: Image.asset(
         'assets/LOGO.png',
         width: screenWidth * 0.8,
