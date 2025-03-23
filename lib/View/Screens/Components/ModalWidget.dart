@@ -54,7 +54,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
               context: context,
               builder: (BuildContext context) {
                 return SafeArea(
-                  child: Container(
+                  child: SizedBox(
                     height: 200,
                     child: Center(
                       child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/View/Screens/HomeScreen.dart';
 import '/View/Screens/all_sms_screen.dart';
+import '/View/AppColors.dart';
 
 class DynamicScreen extends StatefulWidget {
   const DynamicScreen({super.key});
@@ -12,7 +13,15 @@ class DynamicScreen extends StatefulWidget {
 List<String> options = ['Home', 'SMS'];
 
 class _DynamicScreenState extends State<DynamicScreen> {
-  String currentScreen = options[0]; // Default to Home
+  // Define options inside the class
+  final List<String> options = ['Home', 'SMS'];
+  late String currentScreen;
+
+  @override
+  void initState() {
+    super.initState();
+    currentScreen = options[0]; // Initialize default to Home
+  }
 
   Widget _getSelectedScreen() {
     switch (currentScreen) {
@@ -33,62 +42,75 @@ class _DynamicScreenState extends State<DynamicScreen> {
         child: SizedBox(
           height: 80.0,
           child: Container(
-            color: const Color(0xFFCCC2C2),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0)),
+              color: Colors.transparent,
+            ),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Row(
               children: [
                 Expanded(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Radio<String>(
-                            value: options[0],
-                            groupValue: currentScreen,
-                            onChanged: (value) {
-                              setState(() {
-                                currentScreen = value!;
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        'Services',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        currentScreen = options[0];
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Radio<String>(
+                          activeColor: AppColors.buttonColor,
+                          fillColor: MaterialStateProperty.all<Color>(AppColors.buttonColor),
+                          value: options[0],
+                          groupValue: currentScreen,
+                          onChanged: (value) {
+                            setState(() {
+                              currentScreen = value!;
+                            });
+                          },
                         ),
-                      ),
-                    ],
+                        const Text(
+                          'Services',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Radio<String>(
-                            value: options[1],
-                            groupValue: currentScreen,
-                            onChanged: (value) {
-                              setState(() {
-                                currentScreen = value!;
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        'SMS',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        currentScreen = options[1];
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Radio<String>(
+                          activeColor: AppColors.buttonColor,
+                          fillColor: MaterialStateProperty.all<Color>(AppColors.buttonColor),
+                          value: options[1],
+                          groupValue: currentScreen,
+                          onChanged: (value) {
+                            setState(() {
+                              currentScreen = value!;
+                            });
+                          },
                         ),
-                      ),
-                    ],
+                        const Text(
+                          'SMS',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
