@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '/Model/DetailsProvider.dart';
 import 'package:riya_garage/View/Screens/Components/HomePageBoxWidget.dart';
+import '/View/AppColors.dart';
 
 class ModalBottomSheet extends StatefulWidget {
   const ModalBottomSheet({super.key});
@@ -22,8 +23,24 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8,
         child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(AppColors.color3),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+            ),
+            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+              const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0),
+            ),
+          ),
           child: Text(
             selectedModal,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           onPressed: () {
             showModalBottomSheet(

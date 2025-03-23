@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../Model/DetailsProvider.dart';
 import '../AppColors.dart';
 import 'Components/HomePageBoxWidget.dart';
+import 'Components/NewHomePageBoxWidget.dart';
 import 'Components/HomePageFirebaseImageWidget.dart';
 import 'Components/ModalWidget.dart';
 
@@ -43,14 +44,15 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Bajaj');
-                      Navigator.pushNamed(context, '/bajaj');
+                      Provider.of<DetailsProvider>(context, listen: false).setCategory('Maintenance');
+                      Navigator.pushNamed(context, '/districts');
                     },
-                    child: HomePageBoxWidget(
+                    child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
                       screenHeight: screenHeight,
-                      text: 'BAJAJ',
+                      text: 'Maintenance & Repairs',
                       boxWidth: 0.40,
+                      image: 'assets/Maintenance-Repairs-icon.png',
                     ),
                   ),
                   SizedBox(
@@ -58,14 +60,15 @@ class MyHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Suzuki');
-                      Navigator.pushNamed(context, '/suzuki');
+                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
+                      Navigator.pushNamed(context, '/districts');
                     },
-                    child: HomePageBoxWidget(
+                    child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
                       screenHeight: screenHeight,
-                      text: 'SUZUKI',
+                      text: 'Maintenance & Repairs',
                       boxWidth: 0.40,
+                      image: 'assets/SpareParts-BodyParts-icon.png',
                     ),
                   ),
                 ],
@@ -75,14 +78,15 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Toyota');
-                      Navigator.pushNamed(context, '/toyota');
+                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
+                      Navigator.pushNamed(context, '/districts');
                     },
-                    child: HomePageBoxWidget(
+                    child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
                       screenHeight: screenHeight,
-                      text: 'TOYOTA',
+                      text: 'Maintenance & Repairs',
                       boxWidth: 0.40,
+                      image: 'assets/BreakdownServices.png',
                     ),
                   ),
                   SizedBox(
@@ -90,14 +94,15 @@ class MyHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCompany('Honda');
-                      Navigator.pushNamed(context, '/honda');
+                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
+                      Navigator.pushNamed(context, '/districts');
                     },
-                    child: HomePageBoxWidget(
+                    child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
                       screenHeight: screenHeight,
-                      text: 'HONDA',
+                      text: 'Maintenance & Repairs',
                       boxWidth: 0.40,
+                      image: 'assets/TyreShopsServices.png',
                     ),
                   ),
                 ],
