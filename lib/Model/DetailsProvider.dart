@@ -5,48 +5,37 @@ import '../Data/Bajaj/Maintenance/Anuradapura.dart';
 import 'dataClass.dart';
 
 class DetailsProvider with ChangeNotifier {
-
-  late String company ;
+  late String company;
   late String category;
-  late String province ='' ;
+  late String province;
   late String city;
 
   late List<Map<String, dynamic>> availableProviders = maintanceAnuradapura;
 
-  setCompany (newCompanyName){
+  setCompany(newCompanyName) {
     company = newCompanyName;
     notifyListeners();
   }
 
-  setCategory (newCategory){
+  setCategory(newCategory) {
     category = newCategory;
     notifyListeners();
   }
 
-  setCity (newCity){
+  setCity(newCity) {
     city = newCity;
-    //print(company+category+city);
+    // print(company+category+city);
     setAvailableProviders();
     notifyListeners();
   }
 
-  setProvince(newProvince){
-
-    if(province == ''){
-      province = newProvince;
-    }else if(province == newProvince) {
-      province = '';
-    }else if (province != newProvince){
-      province = newProvince;
-    }
-
+  setProvince(newProvince) {
+    province = newProvince;
     notifyListeners();
   }
 
-  setAvailableProviders(){
+  setAvailableProviders() {
     DataClass ss = new DataClass();
-    availableProviders = ss.getListOfProviders(company+category+city);
+    availableProviders = ss.getListOfProviders(company + category + city);
   }
-
 }
-

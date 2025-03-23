@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Provider.of<DetailsProvider>(context, listen: false).setCategory('Maintenance');
-                      Navigator.pushNamed(context, '/districts');
+                      Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
-                      Navigator.pushNamed(context, '/districts');
+                      Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -79,7 +79,7 @@ class MyHomePage extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
-                      Navigator.pushNamed(context, '/districts');
+                      Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,

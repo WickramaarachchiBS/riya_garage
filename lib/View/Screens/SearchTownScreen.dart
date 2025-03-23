@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../Model/DetailsProvider.dart';
 import '../AppColors.dart';
 import 'Components/ProvidersListTileWidget.dart';
+import 'Components/ModalWidgetDistrict.dart';
 
 class SearchTownScreen extends StatefulWidget {
   const SearchTownScreen({super.key});
@@ -12,7 +13,6 @@ class SearchTownScreen extends StatefulWidget {
 }
 
 class _SearchTownScreenState extends State<SearchTownScreen> {
-
   TextEditingController _searchController = TextEditingController();
   List<Map<String, dynamic>> _filteredProviders = [];
 
@@ -29,7 +29,7 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
             color: Colors.white,
           ),
         ),
-        centerTitle :true,
+        centerTitle: true,
         backgroundColor: AppColors.color7,
         iconTheme: const IconThemeData(
           color: Colors.white,
@@ -40,33 +40,45 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: SearchBar(
-                controller: _searchController,
-                onChanged: (query) {
-                  _filterProviders(query);
-                },
-                leading: const Icon(Icons.search),
-                hintText: 'Search Town',
-                shape: WidgetStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0), // Set your desired radius
+              child: Row(
+                children: [
+                  const ModalDistrictBottomSheet(),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: SizedBox(
+                      height: screenHeight * 0.05,
+                      child: SearchBar(
+                        controller: _searchController,
+                        onChanged: (query) {
+                          _filterProviders(query);
+                        },
+                        leading: const Icon(Icons.search),
+                        hintText: 'Search Town',
+                        shape: WidgetStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0), // Set your desired radius
+                          ),
+                        ),
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                        ),
+                        shadowColor: WidgetStateProperty.all(
+                          Colors.white,
+                        ),
+                        backgroundColor: WidgetStateProperty.all(
+                          Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-                shadowColor:WidgetStateProperty.all(
-                    Colors.white,
-                ),
-                backgroundColor: WidgetStateProperty.all(
-                  Colors.white,
-                ),
+                ],
               ),
             ),
             Expanded(
               child: Consumer<DetailsProvider>(
                 builder: (context, providers, child) {
                   // If search query is empty, show all providers
-                  var displayProviders = _filteredProviders.isEmpty
-                      ? providers.availableProviders
-                      : _filteredProviders;
+                  var displayProviders = _filteredProviders.isEmpty ? providers.availableProviders : _filteredProviders;
 
                   return ListView.builder(
                     itemCount: displayProviders.length,
@@ -99,16 +111,9 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
       });
     } else {
       setState(() {
-        _filteredProviders = Provider.of<DetailsProvider>(context, listen: true)
-            .availableProviders
-            .where((provider) {
+        _filteredProviders = Provider.of<DetailsProvider>(context, listen: true).availableProviders.where((provider) {
           // You can adjust the filter logic here as needed
-          return provider['name']
-              .toLowerCase()
-              .contains(query.toLowerCase()) ||
-              provider['des']
-                  .toLowerCase()
-                  .contains(query.toLowerCase());
+          return provider['name'].toLowerCase().contains(query.toLowerCase()) || provider['des'].toLowerCase().contains(query.toLowerCase());
         }).toList();
       });
     }
