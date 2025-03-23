@@ -5,6 +5,7 @@ import '../../Model/DetailsProvider.dart';
 import '../AppColors.dart';
 import 'Components/HomePageBoxWidget.dart';
 import 'Components/HomePageFirebaseImageWidget.dart';
+import 'Components/ModalWidget.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -36,6 +37,7 @@ class MyHomePage extends StatelessWidget {
                   HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
                 ],
               ),
+              const ModalBottomSheet(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -55,9 +55,10 @@ class _DynamicScreenState extends State<DynamicScreen> {
                         ],
                       ),
                       const Text(
-                        'Home',
+                        'Services',
                         style: TextStyle(
-                          fontSize: 15.0,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -82,7 +83,10 @@ class _DynamicScreenState extends State<DynamicScreen> {
                       ),
                       const Text(
                         'SMS',
-                        style: TextStyle(fontSize: 15.0),
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
