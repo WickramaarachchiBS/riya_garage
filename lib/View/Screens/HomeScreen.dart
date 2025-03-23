@@ -45,6 +45,7 @@ class MyHomePage extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Provider.of<DetailsProvider>(context, listen: false).setCategory('Maintenance');
+
                       Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
@@ -61,6 +62,7 @@ class MyHomePage extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
+
                       Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(

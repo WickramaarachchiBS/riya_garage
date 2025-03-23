@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:riya_garage/View/Screens/Honda.dart';
 import '../../Model/DetailsProvider.dart';
 import '../AppColors.dart';
 import 'Components/ProvidersListTileWidget.dart';
@@ -17,6 +18,23 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
   List<Map<String, dynamic>> _filteredProviders = [];
 
   @override
+  void initState() {
+    super.initState();
+    // Initialize data if needed
+    _filteredProviders = [];
+
+    // Add listener to controller to update search when text changes
+    _searchController.addListener(() {
+      _filterProviders(_searchController.text);
+    });
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -104,16 +122,17 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
 
   // Function to filter providers based on search query
   void _filterProviders(String query) {
-    // If query is empty, show all providers
+    final providers = Provider.of<DetailsProvider>(context, listen: false);
+
     if (query.isEmpty) {
       setState(() {
         _filteredProviders = [];
       });
     } else {
       setState(() {
-        _filteredProviders = Provider.of<DetailsProvider>(context, listen: true).availableProviders.where((provider) {
-          // You can adjust the filter logic here as needed
-          return provider['name'].toLowerCase().contains(query.toLowerCase()) || provider['des'].toLowerCase().contains(query.toLowerCase());
+        _filteredProviders = providers.availableProviders.where((provider) {
+          return provider['name'].toString().toLowerCase().contains(query.toLowerCase()) ||
+              provider['des'].toString().toLowerCase().contains(query.toLowerCase());
         }).toList();
       });
     }

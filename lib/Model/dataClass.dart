@@ -50,7 +50,6 @@ import '../Data/Bajaj/SpareParts/Rathnapura.dart';
 import '../Data/Bajaj/SpareParts/Trincomalee.dart';
 import '../Data/Bajaj/SpareParts/Vavuniya.dart';
 
-
 import '../Data/Honda/Maintenance/Ampara.dart';
 import '../Data/Honda/Maintenance/Anuradapura.dart';
 import '../Data/Honda/Maintenance/Badulla.dart';
@@ -157,7 +156,6 @@ import '../Data/Suzuki/SpareParts/Rathnapura.dart';
 import '../Data/Suzuki/SpareParts/Trincomalee.dart';
 import '../Data/Suzuki/SpareParts/Vavuniya.dart';
 
-
 import '../Data/Toyota/Maintenance/Ampara.dart';
 import '../Data/Toyota/Maintenance/Anuradapura.dart';
 import '../Data/Toyota/Maintenance/Badulla.dart';
@@ -211,9 +209,7 @@ import '../Data/Toyota/SpareParts/Rathnapura.dart';
 import '../Data/Toyota/SpareParts/Trincomalee.dart';
 import '../Data/Toyota/SpareParts/Vavuniya.dart';
 
-
 class DataClass {
-
   late Map<String, dynamic> listofproviderslist = {
     'BajajMaintenanceAmpara': maintanceAmpara,
     'BajajMaintenanceAnuradhapura': maintanceAnuradapura,
@@ -232,15 +228,14 @@ class DataClass {
     'BajajMaintenanceMannar': maintanceMannar,
     'BajajMaintenanceMatale': maintanceMatale,
     'BajajMaintenanceMatara': maintanceMatara,
-    'BajajMaintenanceMoneragala': maintanceMonaragala,
+    'BajajMaintenanceMonaragala': maintanceMonaragala,
     'BajajMaintenanceMullaitivu': maintanceMullaitivu,
     'BajajMaintenanceNuwara Eliya': maintanceNuwaraeliya,
     'BajajMaintenancePolonnaruwa': maintancePolonnaruwa,
     'BajajMaintenancePuttalam': maintancePuttalam,
-    'BajajMaintenanceRatnapura': maintanceRathnapura,
+    'BajajMaintenanceRathnapura': maintanceRathnapura,
     'BajajMaintenanceTrincomalee': maintanceTrincomalee,
     'BajajMaintenanceVavuniya': maintanceVavuniya,
-
 
     'BajajSparePartsAmpara': BajajSparePartsAmpara,
     'BajajSparePartsAnuradhapura': BajajSparePartsAnuradapura,
@@ -321,7 +316,6 @@ class DataClass {
     'HondaSparePartsTrincomalee': HondaSparePartsTrincomalee,
     'HondaSparePartsVavuniya': HondaSparePartsVavuniya,
 
-
     'SuzukiMaintenanceAmpara': SuzukiMaintenanceAmpara,
     'SuzukiMaintenanceAnuradhapura': SuzukiMaintenanceAnuradapura,
     'SuzukiMaintenanceBadulla': SuzukiMaintenanceBadulla,
@@ -374,7 +368,6 @@ class DataClass {
     'SuzukiSparePartsRathnapura': SuzukiSparePartsRathnapura,
     'SuzukiSparePartsTrincomalee': SuzukiSparePartsTrincomalee,
     'SuzukiSparePartsVavuniya': SuzukiSparePartsVavuniya,
-
 
     'ToyotaMaintenanceAmpara': ToyotaMaintenanceAmpara,
     'ToyotaMaintenanceAnuradhapura': ToyotaMaintenanceAnuradapura,
@@ -430,9 +423,9 @@ class DataClass {
     'ToyotaSparePartsVavuniya': ToyotaSparePartsVavuniya,
   };
 
-  List<Map<String, dynamic>> getListOfProviders(details){
+  List<Map<String, dynamic>> getListOfProviders(details) {
     List<Map<String, dynamic>> value = listofproviderslist[details] ?? 0;
-   // print(value);
+    print(value);
     return value;
   }
 }

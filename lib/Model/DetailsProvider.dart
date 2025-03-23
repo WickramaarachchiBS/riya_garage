@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:riya_garage/Data/Bajaj/Maintenance/Colombo.dart';
 
 import '../Data/Bajaj/Maintenance/Ampara.dart';
 import '../Data/Bajaj/Maintenance/Anuradapura.dart';
@@ -10,7 +11,7 @@ class DetailsProvider with ChangeNotifier {
   late String province;
   late String city;
 
-  late List<Map<String, dynamic>> availableProviders = maintanceAnuradapura;
+  late List<Map<String, dynamic>> availableProviders = maintanceColombo;
 
   setCompany(newCompanyName) {
     company = newCompanyName;

@@ -55,89 +55,491 @@ class _ModalDistrictBottomSheetState extends State<ModalDistrictBottomSheet> {
               builder: (BuildContext context) {
                 return SafeArea(
                   child: Container(
-                    height: 200,
+                    height: screenHeight * 0.7,
                     child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Provider.of<DetailsProvider>(context, listen: false).setProvince('SouthernProvince');
-                                  setState(() {
-                                    selectedModal = 'Sothern';
-                                  });
-                                  Navigator.pop(context);
-                                },
-                                child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
-                                  screenHeight: screenHeight * 0.3,
-                                  text: 'Sothern',
-                                  boxWidth: 0.40,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Ampara');
+                                    setState(() {
+                                      selectedModal = 'Ampara';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Ampara',
+                                    boxWidth: 0.40,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: screenWidth * 0.05,
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Provider.of<DetailsProvider>(context, listen: false).setProvince('WesternProvince');
-                                  setState(() {
-                                    selectedModal = 'Western';
-                                  });
-                                  Navigator.pop(context);
-                                },
-                                child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
-                                  screenHeight: screenHeight * 0.3,
-                                  text: 'Western',
-                                  boxWidth: 0.40,
+                                SizedBox(
+                                  width: screenWidth * 0.05,
                                 ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Provider.of<DetailsProvider>(context, listen: false).setCompany('Toyota');
-                                  setState(() {
-                                    selectedModal = 'TOYOTA';
-                                  });
-                                  Navigator.pop(context);
-                                },
-                                child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
-                                  screenHeight: screenHeight * 0.3,
-                                  text: 'TOYOTA',
-                                  boxWidth: 0.40,
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Anuradhapura');
+                                    setState(() {
+                                      selectedModal = 'Anuradhapura';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Anuradhapura',
+                                    boxWidth: 0.40,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: screenWidth * 0.05,
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Provider.of<DetailsProvider>(context, listen: false).setCompany('Honda');
-                                  setState(() {
-                                    selectedModal = 'HONDA';
-                                  });
-                                  Navigator.pop(context);
-                                },
-                                child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
-                                  screenHeight: screenHeight * 0.3,
-                                  text: 'HONDA',
-                                  boxWidth: 0.40,
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Badulla');
+                                    setState(() {
+                                      selectedModal = 'Badulla';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Badulla',
+                                    boxWidth: 0.40,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Batticaloa');
+                                    setState(() {
+                                      selectedModal = 'Batticaloa';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Batticaloa',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Colombo');
+                                    setState(() {
+                                      selectedModal = 'Colombo';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Colombo',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Galle');
+                                    setState(() {
+                                      selectedModal = 'Galle';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Galle',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Gampaha');
+                                    setState(() {
+                                      selectedModal = 'Gampaha';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Gampaha',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Hambantota');
+                                    setState(() {
+                                      selectedModal = 'Hambantota';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Hambantota',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Jaffna');
+                                    setState(() {
+                                      selectedModal = 'Jaffna';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Jaffna',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Kalutara');
+                                    setState(() {
+                                      selectedModal = 'Kalutara';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Kalutara',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Kandy');
+                                    setState(() {
+                                      selectedModal = 'Kandy';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Kandy',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Kegalle');
+                                    setState(() {
+                                      selectedModal = 'Kegalle';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Kegalle',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Kilinochchi');
+                                    setState(() {
+                                      selectedModal = 'Kilinochchi';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Kilinochchi',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Kurunegala');
+                                    setState(() {
+                                      selectedModal = 'Kurunegala';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Kurunegala',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Mannar');
+                                    setState(() {
+                                      selectedModal = 'Mannar';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Mannar',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Matale');
+                                    setState(() {
+                                      selectedModal = 'Matale';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Matale',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Matara');
+                                    setState(() {
+                                      selectedModal = 'Matara';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Matara',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Monaragala');
+                                    setState(() {
+                                      selectedModal = 'Monaragala';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Monaragala',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Mullaitivu');
+                                    setState(() {
+                                      selectedModal = 'Mullaitivu';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Mullaitivu',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Nuwara Eliya');
+                                    setState(() {
+                                      selectedModal = 'Nuwara Eliya';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Nuwara Eliya',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Polonnaruwa');
+                                    setState(() {
+                                      selectedModal = 'Polonnaruwa';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Polonnaruwa',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Puttalam');
+                                    setState(() {
+                                      selectedModal = 'Puttalam';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Puttalam',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Rathnapura');
+                                    setState(() {
+                                      selectedModal = 'Rathnapura';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Rathnapura',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: screenWidth * 0.05,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Trincomalee');
+                                    setState(() {
+                                      selectedModal = 'Trincomalee';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Trincomalee',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    Provider.of<DetailsProvider>(context, listen: false).setCity('Vavuniya');
+                                    setState(() {
+                                      selectedModal = 'Vavuniya';
+                                    });
+                                    Navigator.pop(context);
+                                  },
+                                  child: HomePageBoxWidget(
+                                    screenWidth: screenWidth,
+                                    screenHeight: screenHeight * 0.3,
+                                    text: 'Vavuniya',
+                                    boxWidth: 0.40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
