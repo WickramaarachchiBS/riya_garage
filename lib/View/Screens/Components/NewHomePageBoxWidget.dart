@@ -21,7 +21,7 @@ class NewHomePageBoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: screenWidth * boxWidth,
+      width: screenWidth * 0.2,
       height: screenHeight * 0.2,
       decoration: BoxDecoration(
         color: AppColors.themeBlue,

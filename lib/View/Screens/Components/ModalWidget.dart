@@ -21,7 +21,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
 
     return Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.8,
+        width: MediaQuery.of(context).size.width * 0.6,
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(AppColors.color3),
@@ -34,13 +34,25 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
               const EdgeInsets.symmetric(vertical: 12.0, horizontal: 40.0),
             ),
           ),
-          child: Text(
-            selectedModal,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                selectedModal,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(width: 20.0),
+              const Icon(
+                Icons.arrow_drop_down,
+                color: Colors.white,
+                size: 30.0,
+              ),
+            ],
           ),
           onPressed: () {
             showModalBottomSheet(
@@ -54,9 +66,11 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
               context: context,
               builder: (BuildContext context) {
                 return SafeArea(
-                  child: SizedBox(
-                    height: 200,
-                    child: Center(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.5,
+                    child: FractionallySizedBox(
+                      heightFactor: 1.0,
+                      widthFactor: 1.0,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
