@@ -17,7 +17,7 @@ class ChatNumberWidget extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               chatScreen(context, chatNumber);
-              print(chatNumber);
+              // print(chatNumber);
             },
             child: Container(
               height: 60.0,

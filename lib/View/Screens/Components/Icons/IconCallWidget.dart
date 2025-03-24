@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class IconCallWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       Icons.call,
-      size: screenWidth <= 600 ? screenWidth * 0.1 : screenWidth * 0.06,
+      size: screenWidth <= 600 ? screenWidth * 0.1 : screenWidth * 0.04,
       color: Colors.green,
     );
   }

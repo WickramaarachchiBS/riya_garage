@@ -20,8 +20,11 @@ class NewHomePageBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      width: screenWidth * 0.2,
+      width: screenWidth <= 600 ? screenWidth * 0.4 : screenWidth * 0.2,
       height: screenHeight * 0.2,
       decoration: BoxDecoration(
         color: AppColors.themeBlue,

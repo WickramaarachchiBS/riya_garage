@@ -21,31 +21,39 @@ class ProvidersListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: IconPersonWidget(screenWidth: screenWidth),
-      title: Text(providerName),
-      titleTextStyle : const TextStyle(
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-      ),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 0.0,
-        children: [
-          Text(providerAddress),
-          //const SizedBox(height: 4), // Adds some spacing between the lines
-          Text(providerPhoneNumber), // The additional detail you want to add
-        ],
-      ),
-      trailing: GestureDetector(
-        onTap: () async{
-          final Uri launchUri = Uri(
-            scheme: 'tel',
-            path: providerPhoneNumber,
-          );
-          await launchUrl(launchUri);
-        },
-        child: IconCallWidget(screenWidth: screenWidth),
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return Padding(
+      padding: screenWidth <= 600 ? const EdgeInsets.symmetric(horizontal: 0.0) : const EdgeInsets.symmetric(horizontal: 40.0),
+      child: ListTile(
+        leading: IconPersonWidget(screenWidth: screenWidth),
+        title: Text(providerName),
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 0.0,
+          children: [
+            Text(providerAddress),
+            //const SizedBox(height: 4), // Adds some spacing between the lines
+            Text(providerPhoneNumber), // The additional detail you want to add
+          ],
+        ),
+        trailing: GestureDetector(
+          onTap: () async {
+            final Uri launchUri = Uri(
+              scheme: 'tel',
+              path: providerPhoneNumber,
+            );
+            await launchUrl(launchUri);
+          },
+          child: IconCallWidget(
+            screenWidth: screenWidth,
+          ),
+        ),
       ),
     );
   }

@@ -21,7 +21,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
 
     return Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: screenWidth <= 600 ? screenWidth * 0.8 : screenWidth * 0.55,
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(AppColors.color3),
@@ -66,14 +66,13 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
               context: context,
               builder: (BuildContext context) {
                 return SafeArea(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    child: FractionallySizedBox(
-                      heightFactor: 1.0,
-                      widthFactor: 1.0,
+                  child: SizedBox(
+                    height: screenWidth <= 600 ? screenWidth * 0.5 : screenWidth * 0.15,
+                    width: MediaQuery.of(context).size.width,
+                    child: Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
+                        // mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +86,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                   Navigator.pop(context);
                                 },
                                 child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
+                                  screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                   screenHeight: screenHeight * 0.3,
                                   text: 'BAJAJ',
                                   boxWidth: 0.40,
@@ -105,7 +104,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                   Navigator.pop(context);
                                 },
                                 child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
+                                  screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                   screenHeight: screenHeight * 0.3,
                                   text: 'SUZUKI',
                                   boxWidth: 0.40,
@@ -125,7 +124,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                   Navigator.pop(context);
                                 },
                                 child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
+                                  screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                   screenHeight: screenHeight * 0.3,
                                   text: 'TOYOTA',
                                   boxWidth: 0.40,
@@ -143,7 +142,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                   Navigator.pop(context);
                                 },
                                 child: HomePageBoxWidget(
-                                  screenWidth: screenWidth,
+                                  screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                   screenHeight: screenHeight * 0.3,
                                   text: 'HONDA',
                                   boxWidth: 0.40,

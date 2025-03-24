@@ -57,7 +57,8 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: screenWidth <= 600 ? const EdgeInsets.symmetric(horizontal: 16.0) : const EdgeInsets.symmetric(horizontal: 200.0),
+              // const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 children: [
                   const ModalDistrictBottomSheet(),
