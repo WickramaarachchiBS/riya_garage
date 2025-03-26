@@ -61,7 +61,7 @@ class _DynamicScreenState extends State<DynamicScreen> {
                       children: [
                         Radio<String>(
                           activeColor: AppColors.buttonColor,
-                          fillColor: MaterialStateProperty.all<Color>(AppColors.buttonColor),
+                          fillColor: MaterialStateProperty.all<Color>(AppColors.color8),
                           value: options[0],
                           groupValue: currentScreen,
                           onChanged: (value) {
@@ -93,7 +93,7 @@ class _DynamicScreenState extends State<DynamicScreen> {
                       children: [
                         Radio<String>(
                           activeColor: AppColors.buttonColor,
-                          fillColor: MaterialStateProperty.all<Color>(AppColors.buttonColor),
+                          fillColor: MaterialStateProperty.all<Color>(AppColors.color8),
                           value: options[1],
                           groupValue: currentScreen,
                           onChanged: (value) {

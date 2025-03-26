@@ -17,17 +17,6 @@ class MyHomePage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            "Home",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-        backgroundColor: AppColors.color7,
-      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -44,8 +33,7 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCategory('Maintenance');
-                      Navigator.pushNamed(context, '/searchTown');
+                      _handleTap(context, 'Maintenance', '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -60,8 +48,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
-                      Navigator.pushNamed(context, '/searchTown');
+                      _handleTap(context, 'SpareParts', '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -78,8 +65,7 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
-                      Navigator.pushNamed(context, '/searchTown');
+                      _handleTap(context, 'Maintenance', '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -94,8 +80,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Provider.of<DetailsProvider>(context, listen: false).setCategory('SpareParts');
-                      Navigator.pushNamed(context, '/districts');
+                      _handleTap(context, 'SpareParts', '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -113,4 +98,39 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void _handleTap(BuildContext context, String category, String route) {
+  final detailsProvider = Provider.of<DetailsProvider>(context, listen: false);
+  detailsProvider.setCategory(category);
+
+  // Check if company is null or empty
+  if (detailsProvider.company == null || detailsProvider.company!.isEmpty) {
+    _showCompanySelectionAlert(context);
+  } else {
+    Navigator.pushNamed(context, route);
+  }
+}
+
+void _showCompanySelectionAlert(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Select Company First'),
+        content: const Text('Please select a vehicle brand before proceeding.'),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      );
+    },
+  );
 }

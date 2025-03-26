@@ -24,7 +24,7 @@ class _ModalDistrictBottomSheetState extends State<ModalDistrictBottomSheet> {
         width: screenWidth <= 600 ? screenWidth * 0.4 : screenWidth * 0.3,
         child: ElevatedButton(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(AppColors.color3),
+            backgroundColor: MaterialStateProperty.all<Color>(AppColors.color8),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
@@ -55,6 +55,7 @@ class _ModalDistrictBottomSheetState extends State<ModalDistrictBottomSheet> {
               builder: (BuildContext context) {
                 return SafeArea(
                   child: Container(
+                    margin: const EdgeInsets.only(bottom: 5.0),
                     height: screenHeight * 0.7,
                     child: Center(
                       child: SingleChildScrollView(

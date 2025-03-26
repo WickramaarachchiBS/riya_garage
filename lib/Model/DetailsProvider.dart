@@ -6,37 +6,37 @@ import '../Data/Bajaj/Maintenance/Anuradapura.dart';
 import 'dataClass.dart';
 
 class DetailsProvider with ChangeNotifier {
-  late String company;
-  late String category;
-  late String province;
-  late String city;
+  String? company;
+  String? category;
+  String? province;
+  String? city;
 
   late List<Map<String, dynamic>> availableProviders = maintanceColombo;
 
-  setCompany(newCompanyName) {
+  setCompany(String? newCompanyName) {
     company = newCompanyName;
     notifyListeners();
   }
 
-  setCategory(newCategory) {
+  setCategory(String? newCategory) {
     category = newCategory;
     notifyListeners();
   }
 
-  setCity(newCity) {
+  setCity(String? newCity) {
     city = newCity;
     // print(company+category+city);
     setAvailableProviders();
     notifyListeners();
   }
 
-  setProvince(newProvince) {
+  setProvince(String? newProvince) {
     province = newProvince;
     notifyListeners();
   }
 
   setAvailableProviders() {
     DataClass ss = new DataClass();
-    availableProviders = ss.getListOfProviders(company + category + city);
+    availableProviders = ss.getListOfProviders((company ?? '') + (category ?? '') + (province ?? '') + (city ?? ''));
   }
 }

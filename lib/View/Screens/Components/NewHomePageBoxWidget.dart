@@ -27,13 +27,13 @@ class NewHomePageBoxWidget extends StatelessWidget {
       width: screenWidth <= 600 ? screenWidth * 0.4 : screenWidth * 0.2,
       height: screenHeight * 0.2,
       decoration: BoxDecoration(
-        color: AppColors.themeBlue,
+        color: AppColors.color8,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.5), // Shadow color with opacity
-            spreadRadius: 6, // How much the shadow spreads
-            blurRadius: 8, // Softening the shadow (higher value means more blur)
+            spreadRadius: 0, // How much the shadow spreads
+            blurRadius: 0, // Softening the shadow (higher value means more blur)
             offset: const Offset(0, 0), // Offset in the x and y directions
           ),
         ], // Make it a circle

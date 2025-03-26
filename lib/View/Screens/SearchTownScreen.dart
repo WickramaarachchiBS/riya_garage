@@ -35,6 +35,7 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -48,7 +49,7 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: AppColors.color7,
+        backgroundColor: AppColors.color8,
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
@@ -71,8 +72,9 @@ class _SearchTownScreenState extends State<SearchTownScreen> {
                         onChanged: (query) {
                           _filterProviders(query);
                         },
-                        leading: const Icon(Icons.search),
+                        leading: const Icon(Icons.search, size: 20),
                         hintText: 'Search Town',
+                        hintStyle: WidgetStatePropertyAll(TextStyle(fontSize: 14.0)),
                         shape: WidgetStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0), // Set your desired radius

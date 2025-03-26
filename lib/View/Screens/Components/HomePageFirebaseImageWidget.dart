@@ -19,7 +19,7 @@ class HomePageFirebaseImageWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       margin: EdgeInsets.only(
-          top: screenWidth <= 600 ? screenWidth * 0.00 : screenWidth * 0.02, bottom: screenWidth <= 600 ? screenWidth * 0.00 : screenWidth * 0.03),
+          top: screenWidth <= 600 ? screenWidth * 0.01 : screenWidth * 0.02, bottom: screenWidth <= 600 ? screenWidth * 0.00 : screenWidth * 0.03),
       child: Image.asset(
         'assets/LOGO2.png',
         width: screenWidth * 0.8,

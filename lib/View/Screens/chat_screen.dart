@@ -119,23 +119,23 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Column(
                 children: [
                   // Device ID display
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                    color: Colors.grey[200],
-                    child: Row(
-                      children: [
-                        const Icon(Icons.smartphone, size: 16),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            'Your Device ID: ${_deviceId.substring(0, min(8, _deviceId.length))}...',
-                            style: const TextStyle(fontSize: 12),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  //   color: Colors.grey[200],
+                  //   child: Row(
+                  //     children: [
+                  //       const Icon(Icons.smartphone, size: 16),
+                  //       const SizedBox(width: 8),
+                  //       Expanded(
+                  //         child: Text(
+                  //           'Your Device ID: ${_deviceId.substring(0, min(8, _deviceId.length))}...',
+                  //           style: const TextStyle(fontSize: 12),
+                  //           overflow: TextOverflow.ellipsis,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
 
                   // Chat messages area
                   Expanded(
@@ -264,13 +264,13 @@ class MessageBubble extends StatelessWidget {
       child: Column(
         crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          Text(
-            isMe ? 'You' : 'Device $deviceId',
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.grey[600],
-            ),
-          ),
+          // Text(
+          //   isMe ? 'You' : '',
+          //   style: TextStyle(
+          //     fontSize: 12,
+          //     color: Colors.grey[600],
+          //   ),
+          // ),
           const SizedBox(height: 3),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
