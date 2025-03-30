@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             //
             '/sms': (context) => const SmsScreen(), // Named route for SmsScreen
             '/dynamic': (context) => const DynamicScreen(), //Dynamic screen
-            'chat': (context) => const ChatScreen(),
+            '/chat': (context) => const ChatScreen(),
           },
           initialRoute: '/dynamic',
         ));

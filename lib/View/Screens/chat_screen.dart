@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:intl/intl.dart';
 import 'dart:io';
+import 'package:riya_garage/View/AppColors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -103,15 +104,19 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Chat",
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: const Color(0xFF658DDD),
+      appBar: PreferredSize(
+        preferredSize: Size(screenWidth, screenHeight * 0.07),
+        child: AppBar(
+            title: const Text(
+              "Chat",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            backgroundColor: AppColors.color9),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -190,6 +195,35 @@ class _ChatScreenState extends State<ChatScreen> {
                       },
                     ),
                   ),
+                  SizedBox(
+                    height: screenHeight * 0.05,
+                    width: screenWidth <= 600 ? screenWidth * 0.85 : screenWidth * 0.2,
+                    // width: screenWidth * 0.85,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        // alignment: screenWidth <= 600 ? Alignment.center : Alignment.centerRight,
+                        backgroundColor: MaterialStateProperty.all<Color>(AppColors.color8),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.location_on, size: 25, color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'Location',
+                            style: TextStyle(fontSize: 19, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 5),
 
                   // Input area
                   Container(
@@ -197,7 +231,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       color: Colors.white,
                       border: Border(
                         top: BorderSide(
-                          color: Colors.grey.shade300,
+                          color: Colors.blue.shade300,
                           width: 1.0,
                         ),
                       ),

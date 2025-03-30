@@ -24,8 +24,9 @@ class NewHomePageBoxWidget extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
-      width: screenWidth <= 600 ? screenWidth * 0.4 : screenWidth * 0.2,
-      height: screenHeight * 0.2,
+      width: screenWidth <= 600 ? screenWidth * 0.38 : screenWidth * 0.23,
+      height: screenWidth <= 600 ? screenWidth * 0.39 : screenWidth * 0.13,
+      // height: screenWidth * 0.39,
       decoration: BoxDecoration(
         color: AppColors.color8,
         borderRadius: BorderRadius.circular(20),
@@ -44,8 +45,8 @@ class NewHomePageBoxWidget extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            width: screenWidth * 0.4, // Increase the image size (adjust as needed)
-            height: screenHeight * 0.2, // Adjust height as needed
+            width: screenWidth * 0.18, // Increase the image size (adjust as needed)
+            height: screenHeight * 0.18, // Adjust height as needed
             fit: BoxFit.cover, // Maintain the aspect ratio of the image
           ),
         ],

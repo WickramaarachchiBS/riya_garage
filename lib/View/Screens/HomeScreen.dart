@@ -17,15 +17,26 @@ class MyHomePage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size(screenWidth, screenHeight * 0.09),
+        child: AppBar(
+          title: HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
+          centerTitle: true,
+          backgroundColor: AppColors.color9,
+        ),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
-                ],
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
+              //   ],
+              // ),
+              SizedBox(
+                height: screenHeight * 0.05,
               ),
               const ModalBottomSheet(),
               Row(
@@ -65,7 +76,7 @@ class MyHomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      _handleTap(context, 'Maintenance', '/searchTown');
+                      Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,
@@ -80,7 +91,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      _handleTap(context, 'SpareParts', '/searchTown');
+                      Navigator.pushNamed(context, '/searchTown');
                     },
                     child: NewHomePageBoxWidget(
                       screenWidth: screenWidth,

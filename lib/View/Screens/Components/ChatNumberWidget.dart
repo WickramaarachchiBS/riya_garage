@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riya_garage/View/AppColors.dart';
 
 class ChatNumberWidget extends StatelessWidget {
   const ChatNumberWidget({super.key, required this.chatNumber});
@@ -6,7 +7,7 @@ class ChatNumberWidget extends StatelessWidget {
   final String chatNumber;
 
   void chatScreen(BuildContext context, String chatNumber) {
-    Navigator.pushNamed(context, 'chat', arguments: chatNumber);
+    Navigator.pushNamed(context, '/chat', arguments: chatNumber);
   }
 
   @override
@@ -22,7 +23,7 @@ class ChatNumberWidget extends StatelessWidget {
             child: Container(
               height: 60.0,
               decoration: BoxDecoration(
-                color: const Color(0xFF274D9E),
+                color: AppColors.color9,
                 borderRadius: BorderRadius.circular(5.0),
               ),
               margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
