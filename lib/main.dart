@@ -29,26 +29,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => DetailsProvider(),
-        child: MaterialApp(
-          title: 'Riya',
-          theme: ThemeData(
-            dialogBackgroundColor: AppColors.color2,
-          ),
-          routes: {
-            '/home': (context) => const MyHomePage(), // Home route
-            '/bajaj': (context) => const Bajaj(),
-            '/suzuki': (context) => const Suzuki(),
-            '/toyota': (context) => const Toyota(),
-            '/honda': (context) => const Honda(),
-            '/districts': (context) => const DistrictsScreen(),
-            '/searchTown': (context) => const SearchTownScreen(), // Named route for SecondScreen
-            //
-            '/sms': (context) => const SmsScreen(), // Named route for SmsScreen
-            '/dynamic': (context) => const DynamicScreen(), //Dynamic screen
-            '/chat': (context) => const ChatScreen(),
-          },
-          initialRoute: '/dynamic',
-        ));
+      create: (context) => DetailsProvider(),
+      child: MaterialApp(
+        title: 'Riya',
+        theme: ThemeData(
+          dialogBackgroundColor: AppColors.color2,
+        ),
+        routes: {
+          '/home': (context) => const MyHomePage(), // Home route
+          '/bajaj': (context) => const Bajaj(),
+          '/suzuki': (context) => const Suzuki(),
+          '/toyota': (context) => const Toyota(),
+          '/honda': (context) => const Honda(),
+          '/districts': (context) => const DistrictsScreen(),
+          '/searchTown': (context) => const SearchTownScreen(), // Named route for SecondScreen
+          '/sms': (context) => const SmsScreen(), // Named route for SmsScreen
+          '/dynamic': (context) => const DynamicScreen(), //Dynamic screen
+          '/chat': (context) => const ChatScreen(),
+        },
+        initialRoute: '/dynamic',
+      ),
+    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:riya_garage/View/Screens/Components/ModalWidgetDistrict.dart';
 import '../../Model/DetailsProvider.dart';
 import '../AppColors.dart';
 import 'Components/HomePageBoxWidget.dart';
@@ -29,16 +29,11 @@ class MyHomePage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     HomePageFirebaseImageWidget(screenWidth: screenWidth, screenHeight: screenHeight),
-              //   ],
-              // ),
               SizedBox(
                 height: screenHeight * 0.05,
               ),
               const ModalBottomSheet(),
+              const ModalDistrictBottomSheet(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -113,14 +108,14 @@ class MyHomePage extends StatelessWidget {
 
 void _handleTap(BuildContext context, String category, String route) {
   final detailsProvider = Provider.of<DetailsProvider>(context, listen: false);
-  detailsProvider.setCategory(category);
 
   // Check if company is null or empty
-  if (detailsProvider.company == null || detailsProvider.company!.isEmpty) {
+  if (detailsProvider.company == null || detailsProvider.company!.isEmpty || detailsProvider.city == null || detailsProvider.city!.isEmpty) {
     _showCompanySelectionAlert(context);
   } else {
     Navigator.pushNamed(context, route);
   }
+  detailsProvider.setCategory(category);
 }
 
 void _showCompanySelectionAlert(BuildContext context) {
@@ -128,8 +123,8 @@ void _showCompanySelectionAlert(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text('Select Company First'),
-        content: const Text('Please select a vehicle brand before proceeding.'),
+        title: const Text('Empty Fields!'),
+        content: const Text('Please select a vehicle brand and a city before proceeding.'),
         actions: <Widget>[
           TextButton(
             child: const Text('OK'),

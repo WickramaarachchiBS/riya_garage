@@ -12,7 +12,7 @@ class ModalBottomSheet extends StatefulWidget {
 }
 
 class _ModalBottomSheetState extends State<ModalBottomSheet> {
-  String selectedModal = 'Vehicle Brand'; // Default to Home
+  String selectedModal = 'Brand'; // Default to Home
 
   @override
   Widget build(BuildContext context) {
@@ -69,13 +69,19 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                 builder: (BuildContext context) {
                   return SafeArea(
                     child: SizedBox(
-                      height: screenWidth <= 600 ? screenWidth * 0.65 : screenWidth * 0.15,
+                      height: screenWidth <= 600 ? screenWidth * 0.65 : screenWidth * 0.17,
                       width: MediaQuery.of(context).size.width,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           // mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
+                            const Text(
+                              'Only applicable for Maintenance & Repairs and Spare parts & Body Parts',
+                              style: TextStyle(
+                                fontSize: 9.0,
+                              ),
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -83,14 +89,14 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                   onTap: () {
                                     Provider.of<DetailsProvider>(context, listen: false).setCompany('Bajaj');
                                     setState(() {
-                                      selectedModal = 'BAJAJ';
+                                      selectedModal = 'ZOTYE';
                                     });
                                     Navigator.pop(context);
                                   },
                                   child: HomePageBoxWidget(
                                     screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                     screenHeight: screenHeight * 0.3,
-                                    text: 'BAJAJ',
+                                    text: 'ZOTYE',
                                     boxWidth: 0.40,
                                   ),
                                 ),

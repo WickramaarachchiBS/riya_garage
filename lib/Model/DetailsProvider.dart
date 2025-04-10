@@ -14,29 +14,37 @@ class DetailsProvider with ChangeNotifier {
   late List<Map<String, dynamic>> availableProviders = maintanceColombo;
 
   setCompany(String? newCompanyName) {
+    print('setCompany');
+    print(newCompanyName);
     company = newCompanyName;
     notifyListeners();
   }
 
   setCategory(String? newCategory) {
+    print(newCategory);
     category = newCategory;
-    notifyListeners();
-  }
-
-  setCity(String? newCity) {
-    city = newCity;
-    // print(company+category+city);
     setAvailableProviders();
     notifyListeners();
   }
 
+  setCity(String? newCity) {
+    print(newCity);
+    city = newCity;
+    // print(company+category+city);
+    // setAvailableProviders();
+    notifyListeners();
+  }
+
   setProvince(String? newProvince) {
+    print('setProvince');
     province = newProvince;
     notifyListeners();
   }
 
   setAvailableProviders() {
+    print('setAvailableProviders');
     DataClass ss = new DataClass();
     availableProviders = ss.getListOfProviders((company ?? '') + (category ?? '') + (province ?? '') + (city ?? ''));
+    notifyListeners();
   }
 }
