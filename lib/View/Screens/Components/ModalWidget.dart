@@ -181,16 +181,16 @@ class _ModalBottomSheetState extends State<ModalBottomSheet> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Provider.of<DetailsProvider>(context, listen: false).setCompany('RangeRover');
+                                    Provider.of<DetailsProvider>(context, listen: false).setCompany('LandRover');
                                     setState(() {
-                                      selectedModal = 'RANGE ROVER';
+                                      selectedModal = 'LAND ROVER';
                                     });
                                     Navigator.pop(context);
                                   },
                                   child: HomePageBoxWidget(
                                     screenWidth: screenWidth <= 600 ? screenWidth : screenWidth * 0.5,
                                     screenHeight: screenHeight * 0.3,
-                                    text: 'RANGE ROVER',
+                                    text: 'LAND ROVER',
                                     boxWidth: 0.40,
                                   ),
                                 ),
