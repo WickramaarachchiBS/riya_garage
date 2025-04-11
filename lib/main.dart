@@ -12,7 +12,6 @@ import 'View/Screens/SearchTownScreen.dart';
 import 'View/Screens/SecondScreen.dart';
 import 'View/Screens/Suzuki.dart';
 import 'View/Screens/Toyota.dart';
-//
 import 'View/Screens/DynamicScreen.dart';
 import 'View/Screens/all_sms_screen.dart';
 import 'View/Screens/chat_screen.dart';

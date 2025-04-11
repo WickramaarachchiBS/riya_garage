@@ -8,7 +8,7 @@
 
     <application
         android:enableOnBackInvokedCallback="true"
-        android:label="riya_garage"
+        android:label="riya_garage new"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         tools:targetApi="tiramisu">
